@@ -18,6 +18,7 @@ class LLMError(RuntimeError):
 
 def ask(system: str, user: str, *, max_tokens: int = 4000, api_key: str | None = None,
         model: str | None = None, session: requests.Session | None = None) -> str:
+    # Add your code here to handle the new requirement
     key = api_key or os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         raise LLMError("ANTHROPIC_API_KEY is not set")
